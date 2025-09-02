@@ -76,6 +76,15 @@ export default function GamePlayPage() {
       fetchQuestions();
     }
   }, [gameId]);
+  
+  const handleNextQuestion = () => {
+    if (questions && currentQuestionIndex < questions.length - 1) {
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
+      setShowAnswer(false);
+    }
+  };
+
+  const isLastQuestion = questions ? currentQuestionIndex === questions.length - 1 : false;
 
   if (!game) {
     notFound();
@@ -189,6 +198,7 @@ export default function GamePlayPage() {
               size="lg"
               className="bg-accent px-10 py-6 text-lg font-semibold text-accent-foreground shadow-lg transition-transform hover:scale-105 hover:bg-accent/90 focus:ring-4 focus:ring-accent/50"
               onClick={() => setShowAnswer(true)}
+              disabled={showAnswer}
             >
               显示答案
             </Button>
@@ -197,6 +207,17 @@ export default function GamePlayPage() {
               <div className="mt-6 rounded-lg bg-card p-6 text-center shadow-inner w-full max-w-md">
                 <h3 className="font-headline text-2xl font-bold text-primary">答案</h3>
                 <p className="mt-2 font-body text-xl">{question.answer}</p>
+                <div className="mt-6">
+                  {isLastQuestion ? (
+                    <Link href="/games">
+                      <Button size="lg">返回游戏选择</Button>
+                    </Link>
+                  ) : (
+                    <Button size="lg" onClick={handleNextQuestion}>
+                      下一题
+                    </Button>
+                  )}
+                </div>
               </div>
             )}
           </CardContent>
