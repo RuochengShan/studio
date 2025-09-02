@@ -2,14 +2,15 @@ import Link from 'next/link';
 import { Card, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, Swords, Shield, Gamepad2, Puzzle, Dice5 } from 'lucide-react';
+import gamesData from '@/data/games.json';
 
-const games = [
-  { name: 'game1', icon: <Swords className="h-12 w-12 text-primary" />, href: '/games/game1' },
-  { name: 'game2', icon: <Shield className="h-12 w-12 text-primary" />, href: '/games/game2' },
-  { name: 'game3', icon: <Gamepad2 className="h-12 w-12 text-primary" />, href: '/games/game3' },
-  { name: 'game4', icon: <Puzzle className="h-12 w-12 text-primary" />, href: '/games/game4' },
-  { name: 'game5', icon: <Dice5 className="h-12 w-12 text-primary" />, href: '/games/game5' },
-];
+const gameIcons: { [key: string]: React.ReactElement } = {
+  game1: <Swords className="h-12 w-12 text-primary" />,
+  game2: <Shield className="h-12 w-12 text-primary" />,
+  game3: <Gamepad2 className="h-12 w-12 text-primary" />,
+  game4: <Puzzle className="h-12 w-12 text-primary" />,
+  game5: <Dice5 className="h-12 w-12 text-primary" />,
+};
 
 export default function GamesPage() {
   return (
@@ -26,11 +27,11 @@ export default function GamesPage() {
       </header>
       <main className="flex-1 p-4 md:p-8">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-          {games.map((game) => (
-            <Link key={game.name} href={game.href} className="group outline-none">
+          {gamesData.games.map((game) => (
+            <Link key={game.id} href={`/games/${game.id}`} className="group outline-none">
               <Card className="flex h-full flex-col items-center justify-center p-6 text-center transition-all duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-2 hover:bg-card/90 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background">
                 <CardHeader className="flex flex-col items-center gap-4">
-                  {game.icon}
+                  {gameIcons[game.id] || <Gamepad2 className="h-12 w-12 text-primary" />}
                   <CardTitle className="font-body text-2xl font-semibold tracking-wide text-foreground">
                     {game.name}
                   </CardTitle>

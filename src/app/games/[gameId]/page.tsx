@@ -13,8 +13,7 @@ type Game = {
 }
 
 const getGame = (gameId: string): Game | undefined => {
-  const allGames = (gamesData as { games: Game[] }).games;
-  return allGames.find((game) => game.id === gameId);
+  return gamesData.games.find((game) => game.id === gameId);
 };
 
 export default function GamePage({ params }: { params: { gameId: string } }) {
