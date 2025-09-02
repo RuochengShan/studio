@@ -4,11 +4,11 @@ import { Button } from '@/components/ui/button';
 import { ArrowLeft, Swords, Shield, Gamepad2, Puzzle, Dice5 } from 'lucide-react';
 
 const games = [
-  { name: 'game1', icon: <Swords className="h-12 w-12 text-primary" />, href: '#' },
-  { name: 'game2', icon: <Shield className="h-12 w-12 text-primary" />, href: '#' },
-  { name: 'game3', icon: <Gamepad2 className="h-12 w-12 text-primary" />, href: '#' },
-  { name: 'game4', icon: <Puzzle className="h-12 w-12 text-primary" />, href: '#' },
-  { name: 'game5', icon: <Dice5 className="h-12 w-12 text-primary" />, href: '#' },
+  { name: 'game1', icon: <Swords className="h-12 w-12 text-primary" />, href: '/games/game1' },
+  { name: 'game2', icon: <Shield className="h-12 w-12 text-primary" />, href: '/games/game2' },
+  { name: 'game3', icon: <Gamepad2 className="h-12 w-12 text-primary" />, href: '/games/game3' },
+  { name: 'game4', icon: <Puzzle className="h-12 w-12 text-primary" />, href: '/games/game4' },
+  { name: 'game5', icon: <Dice5 className="h-12 w-12 text-primary" />, href: '/games/game5' },
 ];
 
 export default function GamesPage() {
