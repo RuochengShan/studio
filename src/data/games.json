@@ -3,124 +3,27 @@
         {
             "id": "game1",
             "name": "游戏一",
-            "rules": "这是游戏一的规则。请仔细阅读问题和提示，然后给出你的答案。",
-            "questions": [
-                {
-                    "id": "q1",
-                    "question": "抗日战争中，哪次战役是国共两党军队协力取得的首次重大胜利？",
-                    "image": null,
-                    "audio": null,
-                    "hints": [
-                        {
-                            "type": "text",
-                            "content": "这次战役发生在山西。"
-                        },
-                        {
-                            "type": "text",
-                            "content": "八路军115师也参与了此次战役。"
-                        }
-                    ],
-                    "answer": "平型关大捷"
-                }
-            ]
+            "rules": "这是游戏一的规则。请仔细阅读问题和提示，然后给出你的答案。"
         },
         {
             "id": "game2",
             "name": "游戏二",
-            "rules": "这是游戏二的规则。请仔细阅读问题和提示，然后给出你的答案。",
-            "questions": [
-                {
-                    "id": "q1",
-                    "question": "“七七事变”发生在哪里？",
-                    "image": "https://picsum.photos/600/400",
-                    "data-ai-hint": "bridge war",
-                    "audio": null,
-                    "hints": [
-                        {
-                            "type": "text",
-                            "content": "这座桥位于北京附近。"
-                        },
-                        {
-                            "type": "text",
-                            "content": "这座桥的名字里有一个动物。"
-                        }
-                    ],
-                    "answer": "卢沟桥"
-                }
-            ]
+            "rules": "这是游戏二的规则。请仔细阅读问题和提示，然后给出你的答案。"
         },
         {
             "id": "game3",
             "name": "游戏三",
-            "rules": "这是游戏三的规则。请仔细阅读问题和提示，然后给出你的答案。",
-            "questions": [
-                {
-                    "id": "q1",
-                    "question": "请听这段音频，说出歌曲的名称。",
-                    "image": null,
-                    "audio": "/audio/placeholder.mp3",
-                    "hints": [
-                        {
-                            "type": "text",
-                            "content": "这首歌是电影《风云儿女》的主题曲。"
-                        },
-                        {
-                            "type": "text",
-                            "content": "它后来成为了中华人民共和国国歌。"
-                        }
-                    ],
-                    "answer": "《义勇军进行曲》"
-                }
-            ]
+            "rules": "这是游戏三的规则。请仔细阅读问题和提示，然后给出你的答案。"
         },
         {
             "id": "game4",
             "name": "游戏四",
-            "rules": "这是游戏四的规则。请仔细阅读问题和提示，然后给出你的答案。",
-            "questions": [
-                {
-                    "id": "q1",
-                    "question": "这位历史人物是谁？",
-                    "image": "https://picsum.photos/400/600",
-                    "data-ai-hint": "chinese general",
-                    "audio": null,
-                    "hints": [
-                        {
-                            "type": "text",
-                            "content": "他是一位著名的抗日将领。"
-                        },
-                        {
-                            "type": "text",
-                            "content": "他在台儿庄战役中取得了重大胜利。"
-                        }
-                    ],
-                    "answer": "李宗仁"
-                }
-            ]
+            "rules": "这是游戏四的规则。请仔细阅读问题和提示，然后给出你的答案。"
         },
         {
             "id": "game5",
             "name": "游戏五",
-            "rules": "这是游戏五的规则。请仔细阅读问题和提示，然后给出你的答案。",
-            "questions": [
-                {
-                    "id": "q1",
-                    "question": "“地道战”是哪个地区军民发明的抗日战术？",
-                    "image": null,
-                    "audio": null,
-                    "hints": [
-                        {
-                            "type": "text",
-                            "content": "这个地区位于华北平原。"
-                        },
-                        {
-                            "type": "text",
-                            "content": "这个地区以冉庄地道战遗址闻名。"
-                        }
-                    ],
-                    "answer": "冀中平原"
-                }
-            ]
+            "rules": "这是游戏五的规则。请仔细阅读问题和提示，然后给出你的答案。"
         }
     ]
 }

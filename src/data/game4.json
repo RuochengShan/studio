@@ -1,0 +1,22 @@
+{
+    "questions": [
+        {
+            "id": "q1",
+            "question": "这位历史人物是谁？",
+            "image": "https://picsum.photos/400/600",
+            "data-ai-hint": "chinese general",
+            "audio": null,
+            "hints": [
+                {
+                    "type": "text",
+                    "content": "他是一位著名的抗日将领。"
+                },
+                {
+                    "type": "text",
+                    "content": "他在台儿庄战役中取得了重大胜利。"
+                }
+            ],
+            "answer": "李宗仁"
+        }
+    ]
+}

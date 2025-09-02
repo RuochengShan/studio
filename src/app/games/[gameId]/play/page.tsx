@@ -1,7 +1,7 @@
 
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { notFound, useParams } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -15,10 +15,11 @@ import {
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
-  AlertDialogTrigger,
 } from '@/components/ui/alert-dialog';
+import { AlertDialogTrigger } from '@radix-ui/react-alert-dialog';
 import { ArrowLeft, Lightbulb } from 'lucide-react';
 import gamesData from '@/data/games.json';
+import { Skeleton } from '@/components/ui/skeleton';
 
 type Hint = {
   type: string;
@@ -39,26 +40,88 @@ type Game = {
   id: string;
   name: string;
   rules: string;
-  questions: Question[];
 };
+
+type GameQuestions = {
+    questions: Question[];
+}
 
 const getGame = (gameId: string): Game | undefined => {
   return gamesData.games.find((game) => game.id === gameId);
 };
+
 
 export default function GamePlayPage() {
   const params = useParams();
   const gameId = Array.isArray(params.gameId) ? params.gameId[0] : params.gameId;
   const game = getGame(gameId);
   
+  const [questions, setQuestions] = useState<Question[] | null>(null);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [showAnswer, setShowAnswer] = useState(false);
+  const [loading, setLoading] = useState(true);
 
-  if (!game || !game.questions.length) {
+  useEffect(() => {
+    if (gameId) {
+      const fetchQuestions = async () => {
+        try {
+          const questionData: GameQuestions = await import(`@/data/${gameId}.json`);
+          setQuestions(questionData.questions);
+        } catch (error) {
+          console.error("Failed to load game questions", error);
+        } finally {
+            setLoading(false);
+        }
+      };
+      fetchQuestions();
+    }
+  }, [gameId]);
+
+  if (!game) {
     notFound();
   }
 
-  // For simplicity, we'll use the first question of each game.
-  const question = game.questions[0];
+  if (loading) {
+      return (
+        <div className="flex min-h-screen flex-col items-center justify-center bg-background p-8">
+            <div className="flex flex-col items-center space-y-8 w-full max-w-3xl">
+                <Skeleton className="h-10 w-48" />
+                <Skeleton className="h-8 w-full" />
+                <Skeleton className="h-64 w-full" />
+                <div className="grid grid-cols-2 gap-4 w-full max-w-md">
+                    <Skeleton className="h-12 w-full" />
+                    <Skeleton className="h-12 w-full" />
+                </div>
+                <Skeleton className="h-12 w-32" />
+            </div>
+        </div>
+      )
+  }
+
+  if (!questions || questions.length === 0) {
+    return (
+        <div className="flex min-h-screen w-full flex-col bg-background animate-fade-in">
+        <header className="sticky top-0 z-10 flex h-20 items-center gap-4 border-b bg-background/80 px-4 backdrop-blur-sm md:px-8">
+          <Link href={`/games/${game.id}`} aria-label="Back to rules">
+            <Button variant="outline" size="icon" className="h-10 w-10">
+              <ArrowLeft className="h-5 w-5" />
+            </Button>
+          </Link>
+          <h1 className="font-headline text-3xl font-semibold text-foreground">
+            {game.name}
+          </h1>
+        </header>
+        <main className="flex flex-1 flex-col items-center justify-center p-4 text-center md:p-8">
+            <h2 className="text-2xl font-semibold mb-4">No questions available for this game yet.</h2>
+            <Link href={`/games`}>
+                <Button>Back to Game Selection</Button>
+            </Link>
+        </main>
+      </div>
+    );
+  }
+
+  const question = questions[currentQuestionIndex];
 
   return (
     <div className="flex min-h-screen w-full flex-col bg-background animate-fade-in">

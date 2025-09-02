@@ -9,7 +9,6 @@ type Game = {
     id: string;
     name: string;
     rules: string;
-    questions: any[];
 }
 
 const getGame = (gameId: string): Game | undefined => {
