@@ -7,13 +7,137 @@
             "image": null,
             "audio": null,
             "hints": [],
-            "answer": "oh yeah"
+            "answer": "本轮10题为看图猜男明星名字，请大家做好准备。"
         },
         {
-            "id": "q2",
+            "id": "1",
             "type": "open-ended",
             "question": "TA叫什么名字？",
-            "image": "/pics/q2_q.png",
+            "image": "/static/pics/q3_q.png",
+            "audio": null,
+            "hints": [
+
+            ],
+            "answer": "魏大勋"
+        },
+        {
+            "id": "2",
+            "type": "open-ended",
+            "question": "TA叫什么名字？",
+            "image": "/static/pics/q3_x.png",
+            "audio": null,
+            "hints": [
+
+            ],
+            "answer": "王鹤棣"
+        },
+        {
+            "id": "3",
+            "type": "open-ended",
+            "question": "TA叫什么名字？",
+            "image": "/static/pics/q4_q.png",
+            "audio": null,
+            "hints": [
+
+            ],
+            "answer": "檀健次"
+        },
+        {
+            "id": "4",
+            "type": "open-ended",
+            "question": "TA叫什么名字？",
+            "image": "/static/pics/q5_q.png",
+            "audio": null,
+            "hints": [
+
+            ],
+            "answer": "陈哲远"
+        },
+        {
+            "id": "5",
+            "type": "open-ended",
+            "question": "TA叫什么名字？",
+            "image": "/static/pics/q6_q.png",
+            "audio": null,
+            "hints": [
+                {
+                    "type": "text",
+                    "content": "和在场某位一个姓。"
+                }
+            ],
+            "answer": "林一"
+        },
+        {
+            "id": "6",
+            "type": "open-ended",
+            "question": "TA叫什么名字？",
+            "image": "/static/pics/q7_q.png",
+            "audio": null,
+            "hints": [
+
+            ],
+            "answer": "马嘉祺"
+        },
+        {
+            "id": "7",
+            "type": "open-ended",
+            "question": "TA叫什么名字？",
+            "image": "/static/pics/q8_q.png",
+            "audio": null,
+            "hints": [
+
+            ],
+            "answer": "董思成"
+        },
+        {
+            "id": "8",
+            "type": "open-ended",
+            "question": "TA叫什么名字？",
+            "image": "/static/pics/q9_q.png",
+            "audio": null,
+            "hints": [
+
+            ],
+            "answer": "李旻浩"
+        },
+        {
+            "id": "9",
+            "type": "open-ended",
+            "question": "TA叫什么名字？",
+            "image": "/static/pics/18.png",
+            "audio": null,
+            "hints": [
+
+            ],
+            "answer": "伯贤"
+        },
+        {
+            "id": "10",
+            "type": "open-ended",
+            "question": "TA叫什么名字？",
+            "image": "/static/pics/20.png",
+            "audio": null,
+            "hints": [
+
+            ],
+            "answer": "刘宇宁"
+        },
+        {
+            "id": "q10x",
+            "type": "open-ended",
+            "question": "10个题了，干一杯吧。",
+            "image": "/static/pics/q10_x.png",
+            "audio": null,
+            "hints": [
+
+            ],
+            "answer": "继续加油"
+        },
+        {
+            "id": "11",
+            "type": "open-ended",
+            "question": "TA叫什么名字？",
+            "image": "/static/pics/q2_q.png",
             "audio": null,
             "hints": [
                 {
@@ -24,83 +148,160 @@
             "answer": "ZIMOMO"
         },
         {
-            "id": "q3",
+            "id": "12",
             "type": "open-ended",
-            "question": "请听这段音频，说出歌曲的名称。",
-            "image": null,
-            "audio": "/audio/placeholder.mp3",
-            "hints": [
-                {
-                    "type": "text",
-                    "content": "这首歌是电影《风云儿女》的主题曲。"
-                },
-                {
-                    "type": "text",
-                    "content": "它后来成为了中华人民共和国国歌。"
-                }
-            ],
-            "answer": "《义勇军进行曲》"
-        },
-        {
-            "id": "q4",
-            "type": "open-ended",
-            "question": "这位历史人物是谁？",
-            "image": "https://picsum.photos/400/600",
-            "data-ai-hint": "chinese general",
+            "question": "TA们分别叫什么名字？",
+            "image": "/static/pics/q10_q.png",
             "audio": null,
             "hints": [
                 {
                     "type": "text",
-                    "content": "他是一位著名的抗日将领。"
+                    "content": "一个叫白鹿"
                 },
                 {
                     "type": "text",
-                    "content": "他在台儿庄战役中取得了重大胜利。"
+                    "content": "一个叫李一桐"
                 }
             ],
-            "answer": "李宗仁"
+            "answer": "左：李一桐。右：白鹿。"
         },
+
         {
-            "id": "q5",
+            "id": "13",
             "type": "open-ended",
-            "question": "“地道战”是哪个地区军民发明的抗日战术？",
-            "image": null,
+            "question": "TA全名叫什么名字？",
+            "image": "/static/pics/13.png",
             "audio": null,
             "hints": [
-                {
-                    "type": "text",
-                    "content": "这个地区位于华北平原。"
-                },
-                {
-                    "type": "text",
-                    "content": "这个地区以冉庄地道战遗址闻名。"
-                }
+
             ],
-            "answer": "冀中平原"
+            "answer": "迪丽热巴·迪力木拉提"
         },
         {
-            "id": "q6",
-            "type": "multichoice",
-            "question": "哪次会议确立了毛泽东在党和红军中的领导地位？",
-            "image": null,
-            "choices": [
-                "遵义会议",
-                "古田会议",
-                "八七会议",
-                "瓦窑堡会议"
+            "id": "14",
+            "type": "open-ended",
+            "question": "TA叫什么名字？",
+            "image": "/static/pics/14.png",
+            "audio": null,
+            "hints": [
+
             ],
+            "answer": "虞书欣（讲实话有点像琳王的）"
+        },
+        {
+            "id": "15",
+            "type": "open-ended",
+            "question": "TA叫什么名字？",
+            "image": "/static/pics/15.png",
+            "audio": null,
+            "hints": [
+                {
+                    "type": "image",
+                    "content": "/static/pics/15h.png"
+                }
+            ],
+            "answer": "陶喆"
+        },
+        {
+            "id": "16",
+            "type": "open-ended",
+            "question": "TA叫什么名字？",
+            "image": "/static/pics/16.png",
+            "audio": null,
+            "hints": [
+
+            ],
+            "answer": "宋雨琦"
+        },
+        {
+            "id": "17",
+            "type": "open-ended",
+            "question": "TA们叫什么名字？",
+            "image": "/static/pics/17.png",
+            "audio": null,
+            "hints": [
+
+            ],
+            "answer": "讲实话我查答案都分不清"
+        },
+        {
+            "id": "18",
+            "type": "open-ended",
+            "question": "TA们的角色和演员都叫什么？",
+            "image": "/static/pics/18a.png",
             "audio": null,
             "hints": [
                 {
                     "type": "text",
-                    "content": "这次会议在长征途中召开。"
-                },
-                {
-                    "type": "text",
-                    "content": "会议地点在贵州省。"
+                    "content": "逆爱"
                 }
             ],
-            "answer": "遵义会议"
-        }
+            "answer": "演员：梓渝，田栩宁。角色：吴所畏，池骋"
+        },
+        {
+            "id": "19",
+            "type": "open-ended",
+            "question": "TA叫什么名字？",
+            "image": "/static/pics/19.png",
+            "audio": null,
+            "hints": [
+
+            ],
+            "answer": "斯琴高娃"
+        },
+        {
+            "id": "20",
+            "type": "open-ended",
+            "question": "TA叫什么名字？",
+            "image": "/static/pics/20a.png",
+            "audio": null,
+            "hints": [
+
+            ],
+            "answer": "屠呦呦"
+        },
+        {
+            "id": "20a",
+            "type": "open-ended",
+            "question": "接下来是关于朋友们的题目，难度很高，大家做好心里准备。 全部为抢答，提供题目的朋友可以隐身。",
+            "image": null,
+            "audio": null,
+            "hints": [
+
+            ],
+            "answer": "先干一杯"
+        },
+        {"id": "36", "type": "multichoice", "question": "水的围棋水平是？", "image": null, "audio": null, "hints": [], "choices": ["业余1段", "业余2段", "职业1段", "职业2段"], "answer": "业余2段"} ,
+        {"id": "41", "type": "open-ended", "question": "TA是谁？", "image": "/static/pics/41.png", "audio": null, "hints": [], "answer": "辉哥"} ,
+        {"id": "37", "type": "multichoice", "question": "潘潘曾经这样形容她的初吻", "image": null, "audio": null, "hints": [], "choices": ["走马观花", "唇齿留香", "蜻蜓点水", "一触即发"], "answer": "蜻蜓点水"} ,
+        {"id": "25", "type": "multichoice", "question": "网红潘亦轩的B站账号“笨蛋博士协会”截止今日共有多少粉丝？", "image": "/static/pics/25.png", "audio": null, "hints": [{"type": "image", "content": "/static/pics/25h1.png"}], "choices": ["0-50", "50-100", "100-150", "150-200"], "answer": "187"} ,
+        {"id": "48", "type": "open-ended", "question": "帽子上是上面字？", "image": "/static/pics/48.png", "audio": null, "hints": [], "answer": "天才小博士"} ,
+        {"id": "39", "type": "open-ended", "question": "在座的有几个yuanyuan？", "image": null, "audio": null, "hints": [], "answer": "3"} ,
+        {"id": "32", "type": "open-ended", "question": "秦萌的妹妹叫什么名字？", "image": null, "audio": null, "hints": [{"type": "text", "content": "也是草字头。"}], "answer": "秦蕊"} ,
+        {"id": "42", "type": "open-ended", "question": "TA是谁？", "image": "/static/pics/42.png", "audio": null, "hints": [], "answer": "子涵"} ,
+        {"id": "27", "type": "multichoice", "question": "单哥的外号“亚洲金蛇”最早是龚举在哪天起的？", "image": "/static/pics/27.png", "audio": null, "hints": [{"type": "text", "content": "是某人的生日party当天。"}], "choices": ["2022.10.3", "2022.10.4", "2022.10.5", "2022.10.6"], "answer": "2022.10.5"} ,
+        {"id": "29", "type": "open-ended", "question": "高媛是以哪个项目获得的国家二级运动员？", "image": null, "audio": null, "hints": [{"type": "text", "content": "跑步来的"}], "answer": "400m跑"} ,
+        {"id": "26", "type": "multichoice", "question": "轩哥曾经在非洲哪个国家工作过？", "image": "/static/pics/26.png", "audio": null, "hints": [], "choices": ["南非", "加纳", "马达加斯加", "尼日利亚"], "answer": "尼日利亚"} ,
+        {"id": "43", "type": "open-ended", "question": "TA是谁？", "image": "/static/pics/43.png", "audio": null, "hints": [{"type": "image", "content": "/static/pics/43h.png"}], "answer": "举姐"} ,
+        {"id": "22", "type": "open-ended", "question": "下一句歌词是什么？", "image": "/static/pics/22.png", "audio": "/static/audio/22.m4a", "hints": [{"type": "text", "content": "放的是原唱，不知道的都是敌特。"}], "answer": "勤劳勇敢的中国人"} ,
+        {"id": "28", "type": "open-ended", "question": "举爸爸请客的时候，在场的人都有谁没吃到黑松露炒饭？", "image": null, "audio": null, "hints": [{"type": "text", "content": "郑琳吃得最多。"}, {"type": "text", "content": "轩哥也刮了盘子。"}], "answer": "子涵，辉哥，天才"} ,
+        {"id": "49", "type": "open-ended", "question": "TA是谁？", "image": "/static/pics/49.png", "audio": null, "hints": [], "answer": "萌姐"} ,
+        {"id": "35", "type": "open-ended", "question": "单若诚曾用名叫什么？", "image": null, "audio": null, "hints": [], "answer": "单宽"} ,
+        {"id": "50", "type": "open-ended", "question": "这是谁的妈妈？", "image": "/static/pics/50.png", "audio": null, "hints": [{"type": "image", "content": "/static/pics/50h1.png"}, {"type": "image", "content": "/static/pics/50h2.png"}], "answer": "潘潘"},
+        {"id": "23", "type": "open-ended", "question": "这首歌叫什么？（潘潘禁止回答）", "image": "/static/pics/23.png", "audio": "/static/audio/23.m4a", "hints": [], "answer": "舞女"} ,
+        {"id": "30", "type": "open-ended", "question": "高媛的弟弟叫什么名字？", "image": null, "audio": null, "hints": [{"type": "text", "content": "GY"}], "answer": "高洋"} ,
+        {"id": "47", "type": "open-ended", "question": "这是谁的手？", "image": "/static/pics/47.png", "audio": null, "hints": [{"type": "image", "content": "/static/pics/47h.png"}], "answer": "刘若水"} ,
+        {"id": "44", "type": "open-ended", "question": "TA是谁？", "image": "/static/pics/44.png", "audio": null, "hints": [{"type": "image", "content": "/static/pics/44h.png"}], "answer": "龚建"} ,
+        {"id": "39a", "type": "open-ended", "question": "单哥的女朋友叫什么？", "image": null, "audio": null, "hints": [], "answer": "王嘉懿"} ,
+        {"id": "40", "type": "open-ended", "question": "打麻将胜率最高三个人分别是谁？", "image": "/static/pics/40.png", "audio": null, "hints": [], "answer": "1子涵，2潘潘，3轩哥"} ,
+        {"id": "46", "type": "open-ended", "question": "TA是谁？", "image": "/static/pics/46.png", "audio": null, "hints": [{"type": "image", "content": "/static/pics/46h.png"}], "answer": "高媛"} ,
+        {"id": "31", "type": "multichoice", "question": "王艺辉现在的户口在哪里？", "image": "/static/pics/31.png", "audio": null, "hints": [{"type": "text", "content": "反正不是北京"}], "choices": ["北京", "天津", "四川", "重庆"], "answer": "四川"} ,
+        {"id": "34", "type": "open-ended", "question": "辉萌在法律上是什么关系？", "image": null, "audio": null, "hints": [], "answer": "domestic partners"} ,
+        {"id": "45", "type": "open-ended", "question": "TA是谁？", "image": "/static/pics/45.png", "audio": null, "hints": [], "answer": "琳王"} ,
+        {"id": "33", "type": "open-ended", "question": "郑琳的爸爸贵姓？", "image": null, "audio": null, "hints": [{"type": "text", "content": "不姓郑"}], "answer": "老张大哥"} ,
+        {"id": "24", "type": "open-ended", "question": "这首歌叫什么名字？", "image": null, "audio": "/static/audio/24.m4a", "hints": [], "answer": "强军战歌"} ,
+        {"id": "38", "type": "multichoice", "question": "天才在乐队中主要担任？", "image": null, "audio": null, "hints": [], "choices": ["主唱", "吉他手", "贝斯手", "全能"], "answer": "我觉得是全能，但好像是贝斯手"},
+        {"id": "21", "type": "open-ended", "question": "这歌是哪部电视剧的主题曲？", "image": "/static/pics/21.png", "audio": "/static/audio/12.m4a", "hints": [{"type": "text", "content": "原唱没有这两位翻唱歌手唱得好。"}], "answer": "康熙王朝"} ,
+        {"id": "51", "type": "open-ended", "question": "TA是谁？", "image": "/static/pics/51.png", "audio": null, "hints": [], "answer": "最帅的人"}
     ]
 }

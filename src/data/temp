@@ -1,0 +1,132 @@
+{
+    "questions": [
+        {
+            "id": "q1",
+            "type": "open-ended",
+            "question": "集体干杯进入下一题。",
+            "image": null,
+            "audio": null,
+            "hints": [
+                {
+                    "type": "text",
+                    "content": "这次战役发生在山西。"
+                },
+                {
+                    "type": "text",
+                    "content": "八路军115师也参与了此次战役。"
+                }
+            ],
+            "answer": "平型关大捷"
+        },
+                {
+                    "id": "31",
+                    "type": "multichoice",
+                    "question": "王艺辉现在的户口在哪里？",
+                    "image": "/static/pics/31.png",
+                    "audio": null,
+                    "hints": [
+                        {
+                            "type": "text",
+                            "content": "反正不是北京"
+                        }
+                    ],
+                    "choices": ["北京", "天津", "四川", "重庆"],
+
+                    "answer": "四川"
+                },
+        {
+            "id": "q2",
+            "type": "open-ended",
+            "question": "“七七事变”发生在哪里？",
+            "image": "https://picsum.photos/600/400",
+            "data-ai-hint": "bridge war",
+            "audio": null,
+            "hints": [
+                {
+                    "type": "text",
+                    "content": "这座桥位于北京附近。"
+                },
+                {
+                    "type": "image",
+                    "content": "https://picsum.photos/300/200",
+                    "data-ai-hint": "stone lion"
+                }
+            ],
+            "answer": "卢沟桥"
+        },
+        {
+            "id": "q3",
+            "type": "open-ended",
+            "question": "请听这段音频，说出歌曲的名称。",
+            "image": null,
+            "audio": "/audio/placeholder.mp3",
+            "hints": [
+                {
+                    "type": "text",
+                    "content": "这首歌是电影《风云儿女》的主题曲。"
+                },
+                {
+                    "type": "text",
+                    "content": "它后来成为了中华人民共和国国歌。"
+                }
+            ],
+            "answer": "《义勇军进行曲》"
+        },
+        {
+            "id": "q4",
+            "type": "open-ended",
+            "question": "这位历史人物是谁？",
+            "image": "https://picsum.photos/400/600",
+            "data-ai-hint": "chinese general",
+            "audio": null,
+            "hints": [
+                {
+                    "type": "text",
+                    "content": "他是一位著名的抗日将领。"
+                },
+                {
+                    "type": "text",
+                    "content": "他在台儿庄战役中取得了重大胜利。"
+                }
+            ],
+            "answer": "李宗仁"
+        },
+        {
+            "id": "q5",
+            "type": "open-ended",
+            "question": "“地道战”是哪个地区军民发明的抗日战术？",
+            "image": null,
+            "audio": null,
+            "hints": [
+                {
+                    "type": "text",
+                    "content": "这个地区位于华北平原。"
+                },
+                {
+                    "type": "text",
+                    "content": "这个地区以冉庄地道战遗址闻名。"
+                }
+            ],
+            "answer": "冀中平原"
+        },
+        {
+            "id": "q6",
+            "type": "multichoice",
+            "question": "哪次会议确立了毛泽东在党和红军中的领导地位？",
+            "image": null,
+            "choices": ["遵义会议", "古田会议", "八七会议", "瓦窑堡会议"],
+            "audio": null,
+            "hints": [
+                {
+                    "type": "text",
+                    "content": "这次会议在长征途中召开。"
+                },
+                {
+                    "type": "text",
+                    "content": "会议地点在贵州省。"
+                }
+            ],
+            "answer": "遵义会议"
+        }
+    ]
+}
