@@ -3,40 +3,26 @@
         {
             "id": "q1",
             "type": "open-ended",
-            "question": "抗日战争中，哪次战役是国共两党军队协力取得的首次重大胜利？",
+            "question": "集体干一杯进入下一题。",
             "image": null,
             "audio": null,
             "hints": [
-                {
-                    "type": "text",
-                    "content": "这次战役发生在山西。"
-                },
-                {
-                    "type": "text",
-                    "content": "八路军115师也参与了此次战役。"
-                }
             ],
-            "answer": "平型关大捷"
+            "answer": "oh yeah"
         },
         {
             "id": "q2",
             "type": "open-ended",
-            "question": "“七七事变”发生在哪里？",
-            "image": "https://picsum.photos/600/400",
-            "data-ai-hint": "bridge war",
+            "question": "TA叫什么名字？",
+            "image": "/static/pics/q2_q.png",
             "audio": null,
             "hints": [
                 {
                     "type": "text",
-                    "content": "这座桥位于北京附近。"
-                },
-                {
-                    "type": "image",
-                    "content": "https://picsum.photos/300/200",
-                    "data-ai-hint": "stone lion"
+                    "content": "不叫LABUBU"
                 }
             ],
-            "answer": "卢沟桥"
+            "answer": "ZIMOMO"
         },
         {
             "id": "q3",
