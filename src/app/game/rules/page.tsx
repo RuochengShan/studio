@@ -23,7 +23,13 @@ export default function GameRulesPage() {
                     <CardTitle className="text-center font-headline text-4xl">游戏规则</CardTitle>
                 </CardHeader>
                 <CardContent className="text-center">
-                    <CardDescription className="text-lg mb-8">{gameData.rules}</CardDescription>
+                    <CardDescription asChild className="text-lg mb-8">
+                      <div>
+                        {gameData.rules.map((rule, index) => (
+                          <p key={index}>{rule}</p>
+                        ))}
+                      </div>
+                    </CardDescription>
                     <Link href="/game/play">
                         <Button size="lg" className="bg-accent px-10 py-6 text-lg font-semibold text-accent-foreground shadow-lg transition-transform hover:scale-105 hover:bg-accent/90 focus:ring-4 focus:ring-accent/50">
                             进入游戏
