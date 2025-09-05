@@ -20,17 +20,21 @@ import { ArrowLeft, Lightbulb } from 'lucide-react';
 import gameData from '@/data/game.json';
 import questionsData from '@/data/all-questions.json';
 import { Skeleton } from '@/components/ui/skeleton';
+import { cn } from '@/lib/utils';
 
 type Hint = {
   type: string;
   content: string;
+  'data-ai-hint'?: string;
 };
 
 type Question = {
   id: string;
+  type: 'open-ended' | 'multichoice';
   question: string;
   image?: string | null;
   audio?: string | null;
+  choices?: string[];
   hints: Hint[];
   answer: string;
   'data-ai-hint'?: string;
@@ -40,10 +44,11 @@ export default function GamePlayPage() {
   const [questions, setQuestions] = useState<Question[] | null>(null);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [showAnswer, setShowAnswer] = useState(false);
+  const [selectedChoice, setSelectedChoice] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setQuestions(questionsData.questions);
+    setQuestions(questionsData.questions as Question[]);
     setLoading(false);
   }, []);
   
@@ -51,7 +56,13 @@ export default function GamePlayPage() {
     if (questions && currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
       setShowAnswer(false);
+      setSelectedChoice(null);
     }
+  };
+
+  const handleChoiceClick = (choice: string) => {
+    if (showAnswer) return;
+    setSelectedChoice(choice);
   };
 
   const isLastQuestion = questions ? currentQuestionIndex === questions.length - 1 : false;
@@ -135,6 +146,25 @@ export default function GamePlayPage() {
               </audio>
             )}
 
+            {question.type === 'multichoice' && question.choices && (
+                <div className="grid grid-cols-2 gap-4 w-full max-w-md">
+                    {question.choices.map((choice, index) => (
+                        <Button 
+                            key={index} 
+                            variant={selectedChoice === choice ? "default" : "outline"}
+                            size="lg"
+                            onClick={() => handleChoiceClick(choice)}
+                            className={cn("text-lg", {
+                                "bg-green-500 text-white": showAnswer && choice === question.answer,
+                                "bg-red-500 text-white": showAnswer && selectedChoice === choice && choice !== question.answer,
+                            })}
+                        >
+                            {choice}
+                        </Button>
+                    ))}
+                </div>
+            )}
+
             <div className="grid grid-cols-2 gap-4 w-full max-w-md">
               {question.hints.map((hint, index) => (
                 <AlertDialog key={index}>
@@ -149,7 +179,18 @@ export default function GamePlayPage() {
                       <AlertDialogTitle>提示 {index + 1}</AlertDialogTitle>
                       <AlertDialogDescription className="pt-4">
                         {hint.type === 'text' && <p className="text-lg text-foreground">{hint.content}</p>}
-                        {/* More hint types can be handled here */}
+                        {hint.type === 'image' && (
+                            <div className="relative w-full h-48 mt-2">
+                                <Image
+                                    src={hint.content}
+                                    alt={`Hint image`}
+                                    fill
+                                    style={{objectFit: 'contain'}}
+                                    className="rounded-lg"
+                                    data-ai-hint={hint['data-ai-hint']}
+                                />
+                            </div>
+                        )}
                       </AlertDialogDescription>
                     </AlertDialogHeader>
                     <AlertDialogFooter>
@@ -173,6 +214,9 @@ export default function GamePlayPage() {
               <div className="mt-6 rounded-lg bg-card p-6 text-center shadow-inner w-full max-w-md">
                 <h3 className="font-headline text-2xl font-bold text-primary">答案</h3>
                 <p className="mt-2 font-body text-xl">{question.answer}</p>
+                {question.type === 'multichoice' && selectedChoice && selectedChoice !== question.answer && (
+                    <p className="mt-2 font-body text-xl text-destructive">你的选择是: {selectedChoice}</p>
+                )}
                 <div className="mt-6">
                   {isLastQuestion ? (
                     <Link href="/">
