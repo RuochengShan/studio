@@ -2,11 +2,10 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { notFound, useParams } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import {
   AlertDialog,
   AlertDialogAction,
@@ -18,7 +17,8 @@ import {
 } from '@/components/ui/alert-dialog';
 import { AlertDialogTrigger } from '@radix-ui/react-alert-dialog';
 import { ArrowLeft, Lightbulb } from 'lucide-react';
-import gamesData from '@/data/games.json';
+import gameData from '@/data/game.json';
+import questionsData from '@/data/all-questions.json';
 import { Skeleton } from '@/components/ui/skeleton';
 
 type Hint = {
@@ -36,46 +36,16 @@ type Question = {
   'data-ai-hint'?: string;
 };
 
-type Game = {
-  id: string;
-  name: string;
-  rules: string;
-};
-
-type GameQuestions = {
-    questions: Question[];
-}
-
-const getGame = (gameId: string): Game | undefined => {
-  return gamesData.games.find((game) => game.id === gameId);
-};
-
-
 export default function GamePlayPage() {
-  const params = useParams();
-  const gameId = Array.isArray(params.gameId) ? params.gameId[0] : params.gameId;
-  const game = getGame(gameId);
-  
   const [questions, setQuestions] = useState<Question[] | null>(null);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [showAnswer, setShowAnswer] = useState(false);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (gameId) {
-      const fetchQuestions = async () => {
-        try {
-          const questionData: GameQuestions = await import(`@/data/${gameId}.json`);
-          setQuestions(questionData.questions);
-        } catch (error) {
-          console.error("Failed to load game questions", error);
-        } finally {
-            setLoading(false);
-        }
-      };
-      fetchQuestions();
-    }
-  }, [gameId]);
+    setQuestions(questionsData.questions);
+    setLoading(false);
+  }, []);
   
   const handleNextQuestion = () => {
     if (questions && currentQuestionIndex < questions.length - 1) {
@@ -85,10 +55,6 @@ export default function GamePlayPage() {
   };
 
   const isLastQuestion = questions ? currentQuestionIndex === questions.length - 1 : false;
-
-  if (!game) {
-    notFound();
-  }
 
   if (loading) {
       return (
@@ -111,19 +77,19 @@ export default function GamePlayPage() {
     return (
         <div className="flex min-h-screen w-full flex-col bg-background animate-fade-in">
         <header className="sticky top-0 z-10 flex h-20 items-center gap-4 border-b bg-background/80 px-4 backdrop-blur-sm md:px-8">
-          <Link href={`/games/${game.id}`} aria-label="Back to rules">
+          <Link href="/game/rules" aria-label="Back to rules">
             <Button variant="outline" size="icon" className="h-10 w-10">
               <ArrowLeft className="h-5 w-5" />
             </Button>
           </Link>
           <h1 className="font-headline text-3xl font-semibold text-foreground">
-            {game.name}
+            {gameData.name}
           </h1>
         </header>
         <main className="flex flex-1 flex-col items-center justify-center p-4 text-center md:p-8">
             <h2 className="text-2xl font-semibold mb-4">No questions available for this game yet.</h2>
-            <Link href={`/games`}>
-                <Button>Back to Game Selection</Button>
+            <Link href={`/`}>
+                <Button>Back to Home</Button>
             </Link>
         </main>
       </div>
@@ -135,13 +101,13 @@ export default function GamePlayPage() {
   return (
     <div className="flex min-h-screen w-full flex-col bg-background animate-fade-in">
       <header className="sticky top-0 z-10 flex h-20 items-center gap-4 border-b bg-background/80 px-4 backdrop-blur-sm md:px-8">
-        <Link href={`/games/${game.id}`} aria-label="Back to rules">
+        <Link href="/game/rules" aria-label="Back to rules">
           <Button variant="outline" size="icon" className="h-10 w-10">
             <ArrowLeft className="h-5 w-5" />
           </Button>
         </Link>
         <h1 className="font-headline text-3xl font-semibold text-foreground">
-          {game.name}
+          {gameData.name}
         </h1>
       </header>
 
@@ -209,8 +175,8 @@ export default function GamePlayPage() {
                 <p className="mt-2 font-body text-xl">{question.answer}</p>
                 <div className="mt-6">
                   {isLastQuestion ? (
-                    <Link href="/games">
-                      <Button size="lg">返回游戏选择</Button>
+                    <Link href="/">
+                      <Button size="lg">返回主页</Button>
                     </Link>
                   ) : (
                     <Button size="lg" onClick={handleNextQuestion}>
